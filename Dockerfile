@@ -5,21 +5,26 @@ LABEL org.opencontainers.image.authors="Amirhossein"
 # get cellxgene_VIP version 3.1
 ADD https://github.com/interactivereport/cellxgene_VIP/archive/refs/tags/v3.1.tar.gz ./
 
+# extract
+RUN tar -xzf v3.1.tar.gz
+
 # change directory
 WORKDIR /cellxgene_VIP-3.1
 
 ADD https://github.com/chanzuckerberg/cellxgene/archive/refs/tags/1.3.0.tar.gz ./
 
-# rename the directory
-RUN mv cellxgene-1.3.0 cellxgene && \
+# extract and rename the directory
+RUN tar -xzf 1.3.0.tar.gz && \
+    mv cellxgene-1.3.0 cellxgene && \
     # no need to install the cellxgene package with config.sh (comment out the lines)
     sed -i '/^git clone/,/^cd \.\.$/ s/^/#/' config.sh
 
 # install the required packages
 RUN conda config --set channel_priority flexible && \
     conda env create -n VIP -f VIP_conda_R.yml && \
-    conda activate VIP && \
-    ./config.sh && \
+    conda init && \
+    echo "source activate VIP" >> ~/.bashrc && \
+    bash -c "source activate VIP && ./config.sh" && \
     export LIBARROW_MINIMAL=false && \
     unset R_LIBS_USER && \
     # install R packages
