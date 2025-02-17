@@ -1,6 +1,6 @@
 [![Docker Repository on Quay](https://quay.io/repository/bgruening/cellxgene/status "Docker Repository on Quay")](https://quay.io/repository/bgruening/cellxgene)
 
-# docker-cellxgene-vip
+# docker-cellxgene
 
 Docker image with [CELLxGENE](https://cellxgene.cziscience.com/) version 1.3.0.
 This version is optimized for cellxgene usage in galaxy.
