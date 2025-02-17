@@ -3,7 +3,8 @@
 # docker-cellxgene
 
 Docker image with [CELLxGENE](https://cellxgene.cziscience.com/) version 1.3.0.
-This version is optimized for cellxgene usage in galaxy.
+
+This container is optimized for CELLxGENE usage in galaxy.
 
 To build this container you can use the following command:
 
