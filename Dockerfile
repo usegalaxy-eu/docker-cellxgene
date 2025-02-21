@@ -4,7 +4,7 @@ LABEL maintainer="Amirhossein N. Nilchi <nilchia@informatik.uni-freiburg.de>"
 
 RUN \
     # Fetch additional libraries
-    apt-get update -y && apt-get install -y cpio libcairo2-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev make jq npm && \ 
+    apt-get update -y && apt-get install -y cpio libcairo2-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev make jq npm net-tools && \ 
     # Clean cache
     apt-get clean
 
