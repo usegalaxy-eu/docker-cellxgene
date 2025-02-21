@@ -15,10 +15,11 @@ WORKDIR cellxgene
 # Switch to bash terminal to run "conda" commands
 SHELL ["/bin/bash", "-c"]
 
-RUN git checkout af8f1f469d8a84500abb59759affa4cb37ed0c37 && \
+RUN git checkout e418e685e2910993808f58f531a66f2b9b91f8c6 && \
     source /opt/conda/etc/profile.d/conda.sh && \
     conda create -n cxg python=3.12 && \
     conda activate cxg && \
+    pip install galaxy_ie_helpers && \
     make pydist && \
     make install-dist
 
