@@ -29,6 +29,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: quay.io/bgruening/cellxgene:${{ github.event.release.tag_name }}
+          tags: |
+            quay.io/bgruening/cellxgene:${{ github.event.release.tag_name }}
+            quay.io/bgruening/cellxgene:latest
 
 
