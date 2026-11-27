@@ -22,7 +22,7 @@ docker build -t CONTAINER_NAME .
 The container is stored on Quay.io and you can get it via:
 
 ```bash
-docker pull quay.io/bgruening/cellxgene:latest
+docker pull quay.io/bgruening/cellxgene:tag
 ```
 
 ## How to use the container
